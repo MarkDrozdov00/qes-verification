@@ -1,0 +1,28 @@
+#!/bin/sh
+set -eu
+
+COMPOSE_PROJECT_NAME="${COMPOSE_PROJECT_NAME:-signature-validator-cache-smoke}"
+export COMPOSE_PROJECT_NAME
+VOLUME_NAME="${COMPOSE_PROJECT_NAME}_trusted-list-cache"
+
+cleanup() {
+    docker compose down --volumes --remove-orphans >/dev/null 2>&1 || true
+}
+trap cleanup EXIT INT TERM
+
+docker compose down --volumes --remove-orphans >/dev/null 2>&1 || true
+docker volume rm "$VOLUME_NAME" >/dev/null 2>&1 || true
+docker compose build backend
+docker compose up --detach backend
+
+JAVA_UID="$(docker compose exec --no-T backend sh -c 'grep "^Uid:" /proc/1/status | cut -f2')"
+if [ "$JAVA_UID" != "1001" ]; then
+    echo "Expected Java UID 1001, got ${JAVA_UID:-none}" >&2
+    exit 1
+fi
+
+docker compose exec --no-T --user 1001:0 backend sh -c \
+    'touch /app/cache/trusted-lists/.write-test && rm /app/cache/trusted-lists/.write-test'
+
+echo "runtime Java UID 1001"
+echo "fresh named volume writable"

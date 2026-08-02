@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+set -eu
+
+key_id="${1:-prototype-registry-2026-01}"
+private_path="local/keys/prototype-registry-private.pem"
+public_path="data/prototype-registry-public-keys.json"
+runtime_public_path="backend/src/main/resources/prototype/prototype-registry-public-keys.json"
+
+mkdir -p local/keys data
+if [ -e "$private_path" ]; then
+  echo "Refusing to overwrite existing private key: $private_path" >&2
+  exit 1
+fi
+openssl genpkey -algorithm Ed25519 -out "$private_path"
+public_pem="$(openssl pkey -in "$private_path" -pubout)"
+escaped_pem="$(printf '%s' "$public_pem" | awk '{printf "%s\\n", $0}')"
+printf '[\n  {\n    "keyId": "%s",\n    "algorithm": "Ed25519",\n    "publicKeyPem": "%s",\n    "status": "ACTIVE",\n    "validFrom": "2026-01-01T00:00:00Z"\n  }\n]\n' \
+  "$key_id" "$escaped_pem" > "$public_path"
+cp "$public_path" "$runtime_public_path"
+chmod 600 "$private_path"
+echo "Private key: $private_path"
+echo "Public key registry: $public_path"

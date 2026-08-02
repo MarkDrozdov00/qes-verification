@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "AT_NOTARIAL_SIGNATURE_DIRECTORY",
+      "name": "Austrian electronic notarial signature directory",
+      "countryCode": "AT",
+      "baseUrl": "${NOTARY_DIRECTORY_SOURCE_URL}",
+      "defaultBaseUrl": "https://www.notar-signaturverzeichnis.at/",
+      "enabled": true,
+      "automatedCollectionApproved": false
+    }
+  ]
+}

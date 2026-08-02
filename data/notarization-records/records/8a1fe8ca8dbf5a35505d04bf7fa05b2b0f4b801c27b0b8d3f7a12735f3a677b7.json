@@ -1,0 +1,89 @@
+{
+  "payload": {
+    "schemaVersion": 1,
+    "transactionId": "NOT-DEMO-POA-001",
+    "status": "COMPLETED",
+    "documentSha256": "8a1fe8ca8dbf5a35505d04bf7fa05b2b0f4b801c27b0b8d3f7a12735f3a677b7",
+    "createdAt": "2026-07-29T13:46:00Z",
+    "completedAt": "2026-07-29T14:09:00Z",
+    "participants": [
+      {
+        "displayName": "Sebastian Wodniansky-Wildenfeld",
+        "role": "PARTY",
+        "certificateSha256Fingerprint": "ac7ff1f8b7e2245d9ccaa7160b683ea4e8462d137aa70701db2898d12d54b2c5",
+        "signedAt": "2026-07-29T14:03:00Z"
+      },
+      {
+        "displayName": "Sebastian Wodniansky-Wildenfeld",
+        "role": "PARTY",
+        "certificateSha256Fingerprint": "a74bed9e0bec8c1e3856404379dca12de10ef45e5be4c68c8518be04aeda1945",
+        "signedAt": "2026-07-29T14:05:00Z"
+      },
+      {
+        "displayName": "Notarity GmbH",
+        "role": "NOTARY",
+        "certificateSha256Fingerprint": "6766efd511e59a57f1bc0eeb2532ea9702772fb478136ddfc9bea08e9b6e4e58",
+        "signedAt": "2026-07-29T14:08:00Z"
+      }
+    ],
+    "notary": {
+      "displayName": "Notarity GmbH",
+      "certificateSha256Fingerprint": "6766efd511e59a57f1bc0eeb2532ea9702772fb478136ddfc9bea08e9b6e4e58",
+      "countryCode": "AT",
+      "registryId": "PROTOTYPE-NOTARITY-POA-001"
+    },
+    "auditTrail": [
+      {
+        "id": "poa-session-created",
+        "type": "SESSION_CREATED",
+        "occurredAt": "2026-07-29T13:46:00Z",
+        "title": "Notarization session created",
+        "description": "A prototype notarization session was created for the document.",
+        "actor": { "displayName": "Prototype Notarity registry", "role": "SYSTEM" }
+      },
+      {
+        "id": "poa-identity-verified",
+        "type": "IDENTITY_VERIFIED",
+        "occurredAt": "2026-07-29T13:55:00Z",
+        "title": "Participant identity verified",
+        "description": "The prototype registry records completion of participant identity verification.",
+        "actor": { "displayName": "Prototype Notarity registry", "role": "SYSTEM" }
+      },
+      {
+        "id": "poa-first-signature",
+        "type": "PARTICIPANT_SIGNED",
+        "occurredAt": "2026-07-29T14:03:00Z",
+        "title": "Participant signature recorded",
+        "description": "The first participant certificate fingerprint was bound to the transaction.",
+        "actor": { "displayName": "Sebastian Wodniansky-Wildenfeld", "role": "PARTY" }
+      },
+      {
+        "id": "poa-second-signature",
+        "type": "PARTICIPANT_SIGNED",
+        "occurredAt": "2026-07-29T14:05:00Z",
+        "title": "Second participant signature recorded",
+        "description": "The second participant certificate fingerprint was bound to the transaction.",
+        "actor": { "displayName": "Sebastian Wodniansky-Wildenfeld", "role": "PARTY" }
+      },
+      {
+        "id": "poa-notarity-seal",
+        "type": "NOTARY_COMPLETED",
+        "occurredAt": "2026-07-29T14:08:00Z",
+        "title": "Notarity seal recorded",
+        "description": "The Notarity GmbH seal certificate fingerprint was bound to the transaction.",
+        "actor": { "displayName": "Notarity GmbH", "role": "NOTARY" }
+      },
+      {
+        "id": "poa-document-registered",
+        "type": "DOCUMENT_REGISTERED",
+        "occurredAt": "2026-07-29T14:09:00Z",
+        "title": "Document registered",
+        "description": "The exact document SHA-256 fingerprint was registered in the prototype registry.",
+        "actor": { "displayName": "Prototype Notarity registry", "role": "SYSTEM" }
+      }
+    ]
+  },
+  "algorithm": "Ed25519",
+  "keyId": "prototype-registry-2026-01",
+  "signature": "YlDWWHYcbClicII0rZkF50kzPME3n1RyxdcUAR5Xr2yDp3fTufdzoyge1IdO05CPuQT2cfAGnER372abgA4ABA=="
+}

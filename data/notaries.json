@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "dataset": {
+    "name": "Austrian notarial-signature directory snapshot",
+    "datasetType": "STATIC_PUBLIC_SNAPSHOT",
+    "countryCode": "AT",
+    "sourceName": "Austrian electronic notarial signature directory",
+    "sourceUrl": "https://www.notar-signaturverzeichnis.at/",
+    "retrievedAt": "2026-08-02T00:00:00Z",
+    "recordCount": 5,
+    "complete": false,
+    "collectionMethod": "CURATED_MANUAL_IMPORT"
+  },
+  "notaries": [
+    {
+      "id": "AT-NOTARY-C7B336A20AAC",
+      "fullName": "Dr. Walter Bajlicz",
+      "givenName": "Walter",
+      "surname": "Bajlicz",
+      "professionalTitle": "Dr.",
+      "normalizedName": "walter bajlicz",
+      "countryCode": "AT",
+      "nCode": null,
+      "registryStatus": "ACTIVE",
+      "authorizations": [],
+      "certificateReferences": [],
+      "sourceReference": {
+        "sourceRecordUrl": "https://www.notar-signaturverzeichnis.at/",
+        "retrievedAt": "2026-08-02T00:00:00Z"
+      }
+    },
+    {
+      "id": "AT-NOTARY-082C7B18590A",
+      "fullName": "Mag. Michael Raeser",
+      "givenName": "Michael",
+      "surname": "Raeser",
+      "professionalTitle": "Mag.",
+      "normalizedName": "michael raeser",
+      "countryCode": "AT",
+      "nCode": null,
+      "registryStatus": "ACTIVE",
+      "authorizations": [],
+      "certificateReferences": [],
+      "sourceReference": {
+        "sourceRecordUrl": "https://www.notar-signaturverzeichnis.at/",
+        "retrievedAt": "2026-08-02T00:00:00Z"
+      }
+    },
+    {
+      "id": "AT-NOTARY-149E343A29DF",
+      "fullName": "Dr. Georg Feldbacher",
+      "givenName": "Georg",
+      "surname": "Feldbacher",
+      "professionalTitle": "Dr.",
+      "normalizedName": "georg feldbacher",
+      "countryCode": "AT",
+      "nCode": null,
+      "registryStatus": "ACTIVE",
+      "authorizations": [],
+      "certificateReferences": [],
+      "sourceReference": {
+        "sourceRecordUrl": "https://www.notar-signaturverzeichnis.at/",
+        "retrievedAt": "2026-08-02T00:00:00Z"
+      }
+    },
+    {
+      "id": "AT-NOTARY-C261D9642E00",
+      "fullName": "Dr. Thomas Tschernutter",
+      "givenName": "Thomas",
+      "surname": "Tschernutter",
+      "professionalTitle": "Dr.",
+      "normalizedName": "thomas tschernutter",
+      "countryCode": "AT",
+      "nCode": null,
+      "registryStatus": "ACTIVE",
+      "authorizations": [],
+      "certificateReferences": [],
+      "sourceReference": {
+        "sourceRecordUrl": "https://www.notar-signaturverzeichnis.at/",
+        "retrievedAt": "2026-08-02T00:00:00Z"
+      }
+    },
+    {
+      "id": "AT-NOTARY-88E77E190D7D",
+      "fullName": "Mag. Isabella Pouzar-Hofmeister",
+      "givenName": "Isabella",
+      "surname": "Pouzar-Hofmeister",
+      "professionalTitle": "Mag.",
+      "normalizedName": "isabella pouzar hofmeister",
+      "countryCode": "AT",
+      "nCode": null,
+      "registryStatus": "ACTIVE",
+      "authorizations": [],
+      "certificateReferences": [],
+      "sourceReference": {
+        "sourceRecordUrl": "https://www.notar-signaturverzeichnis.at/",
+        "retrievedAt": "2026-08-02T00:00:00Z"
+      }
+    }
+  ]
+}

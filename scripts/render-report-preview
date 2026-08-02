@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PROJECT_DIR=$(dirname "$SCRIPT_DIR")
+
+cd "$PROJECT_DIR/backend"
+if [ -x /usr/libexec/java_home ]; then
+  JAVA_HOME=$(/usr/libexec/java_home -v 21)
+  export JAVA_HOME
+fi
+./gradlew test --tests com.notarity.validator.report.PdfReportServiceTest.rendersReportPreviewToPngUsingPdfBox
+
+PREVIEW_DIR="$PROJECT_DIR/backend/build/report-preview"
+PAGE_COUNT=$(find "$PREVIEW_DIR" -name 'verification-report-page-*.png' -type f | wc -l | tr -d ' ')
+echo "Page count: $PAGE_COUNT"
+file "$PREVIEW_DIR"/verification-report-page-*.png
+echo "Preview images: $PREVIEW_DIR"

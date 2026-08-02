@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+set -eu
+
+if [ "$#" -lt 2 ]; then
+  echo "Usage: $0 <document.pdf> <record-template.json> [key-id]" >&2
+  exit 2
+fi
+
+document="$1"
+template="$2"
+key_id="${3:-prototype-registry-2026-01}"
+
+cd backend
+SPRING_PROFILES_ACTIVE=offline ./gradlew bootRun --args="--spring.main.web-application-type=none --app.registry-registration.enabled=true --app.registry-registration.document=../$document --app.registry-registration.template=../$template --app.registry-registration.key-id=$key_id"

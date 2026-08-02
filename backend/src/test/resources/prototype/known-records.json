@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0",
+  "environment": "PROTOTYPE",
+  "records": [
+    {
+      "documentSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "transactionId": "txn_test_known",
+      "completedAt": "2026-07-30T10:00:00Z",
+      "notary": {
+        "name": "Prototype Test Notary",
+        "registryId": "test-notary-1",
+        "countryCode": "AT",
+        "countryName": "Austria",
+        "city": "Vienna",
+        "registryName": "Test prototype registry"
+      },
+      "receipt": {
+        "algorithm": "Ed25519",
+        "keyId": "test-key"
+      },
+      "auditTrail": [
+        {
+          "id": "event-1",
+          "type": "DOCUMENT_REGISTERED",
+          "occurredAt": "2026-07-30T10:00:00Z",
+          "title": "Document registered"
+        }
+      ]
+    }
+  ]
+}

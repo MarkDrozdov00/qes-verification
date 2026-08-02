@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-08-02T02:15:23.798Z",
+  "generatorVersion": "1.0.0",
+  "sourceId": "AT_NOTARIAL_SIGNATURE_DIRECTORY",
+  "collectionMethod": "CURATED_MANUAL_IMPORT",
+  "requestedSearchCount": 5,
+  "successfulSearchCount": 5,
+  "recordCount": 5,
+  "warnings": [
+    "Manual import used because automated access permission was not established."
+  ]
+}

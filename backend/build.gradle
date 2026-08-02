@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.5'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.notarity'
+version = '0.2.0'
+ext.dssVersion = '6.4'
+ext['commons-lang3.version'] = '3.20.0'
+
+java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
+
+repositories { mavenCentral() }
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8'
+    implementation 'org.apache.pdfbox:pdfbox:3.0.6'
+    implementation 'net.sourceforge.jeuclid:dejavu-fonts:2.29'
+    implementation "eu.europa.ec.joinup.sd-dss:dss-validation:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-policy-jaxb:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-cades:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-pades-pdfbox:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-cms-object:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-crl-parser-stream:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-tsl-validation:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-service:${dssVersion}"
+    implementation "eu.europa.ec.joinup.sd-dss:dss-utils-apache-commons:${dssVersion}"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    systemProperty 'spring.profiles.active', 'test'
+}

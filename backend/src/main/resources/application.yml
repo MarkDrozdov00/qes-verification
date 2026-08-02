@@ -1,0 +1,46 @@
+server:
+  port: ${SERVER_PORT:8080}
+  tomcat:
+    max-swallow-size: 25MB
+spring:
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 26MB
+      resolve-lazily: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+app:
+  version: ${APPLICATION_VERSION:0.4.0}
+  allowed-origin: ${ALLOWED_FRONTEND_ORIGIN:http://localhost:5173}
+  validation:
+    mode: ${VALIDATION_MODE:dss}
+  diagnostics:
+    include-failure-stage: ${INCLUDE_FAILURE_STAGE:true}
+  prototype-registry:
+    directory: ${PROTOTYPE_REGISTRY_DIRECTORY:../data/notarization-records}
+    public-keys: ${PROTOTYPE_REGISTRY_PUBLIC_KEYS:classpath:prototype/prototype-registry-public-keys.json}
+  notary-registry:
+    file: ${PROTOTYPE_NOTARY_REGISTRY_FILE:../data/notaries.json}
+    stale-after-days: ${NOTARY_REGISTRY_STALE_AFTER_DAYS:30}
+  trust:
+    enabled: ${TRUST_VALIDATION_ENABLED:true}
+    lotl-url: ${EU_LOTL_URL:https://ec.europa.eu/tools/lotl/eu-lotl.xml}
+    official-journal-url: ${EU_LOTL_OFFICIAL_JOURNAL_URL:https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:C_202601944}
+    refresh-on-startup: ${TRUST_REFRESH_ON_STARTUP:true}
+    refresh-interval: ${TRUST_REFRESH_INTERVAL:24h}
+    startup-timeout: ${TRUST_STARTUP_TIMEOUT:180s}
+    cache-directory: ${TRUST_CACHE_DIRECTORY:./cache/trusted-lists}
+    online-certificate-fetching: ${ONLINE_CERTIFICATE_FETCHING:true}
+    revocation:
+      enabled: ${REVOCATION_ENABLED:true}
+      ocsp-enabled: ${OCSP_ENABLED:true}
+      crl-enabled: ${CRL_ENABLED:true}
+      connect-timeout-ms: ${TRUST_CONNECT_TIMEOUT_MS:3000}
+      read-timeout-ms: ${TRUST_READ_TIMEOUT_MS:5000}

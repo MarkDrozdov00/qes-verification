@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "transactionId": "NOT-DEMO-001",
+  "status": "COMPLETED",
+  "documentSha256": "",
+  "createdAt": "2026-07-29T13:46:00Z",
+  "completedAt": "2026-07-29T14:09:00Z",
+  "participants": [
+    {
+      "displayName": "Replace with display name",
+      "role": "PARTY",
+      "certificateSha256Fingerprint": "replace-with-real-pdf-certificate-sha256",
+      "signedAt": "2026-07-29T14:05:00Z"
+    }
+  ],
+  "notary": {
+    "displayName": "Replace with notary or organization",
+    "certificateSha256Fingerprint": "replace-with-real-pdf-certificate-sha256",
+    "countryCode": "AT",
+    "registryId": "PROTOTYPE-NOTARY-001"
+  },
+  "auditTrail": [
+    {
+      "id": "evt-1",
+      "type": "SESSION_CREATED",
+      "occurredAt": "2026-07-29T13:46:00Z",
+      "title": "Session created",
+      "description": "Prototype registry event.",
+      "actor": {
+        "displayName": "Prototype registry",
+        "role": "SYSTEM"
+      }
+    }
+  ]
+}

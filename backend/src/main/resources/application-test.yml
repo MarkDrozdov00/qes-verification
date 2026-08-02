@@ -1,0 +1,9 @@
+app:
+  trust:
+    enabled: false
+    refresh-on-startup: false
+    online-certificate-fetching: false
+    revocation:
+      enabled: false
+      ocsp-enabled: false
+      crl-enabled: false

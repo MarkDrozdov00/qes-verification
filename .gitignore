@@ -1,0 +1,14 @@
+.DS_Store
+.env
+frontend/node_modules/
+frontend/dist/
+backend/.gradle/
+backend/build/
+backend/cache/
+*.log
+local/keys/
+**/prototype-registry-private.pem
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+samples/PoA_signed_sample.pdf
