@@ -317,6 +317,7 @@ No secrets belong in committed environment files.
 
 ## Further reading
 
+- [Development journey](docs/DEVELOPMENT_JOURNEY.md)
 - [API contract](docs/API_CONTRACT.md)
 - [Trust validation](docs/TRUST_VALIDATION.md)
 - [Prototype Notarity registry](docs/PROTOTYPE_NOTARITY_REGISTRY.md)
